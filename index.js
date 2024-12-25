@@ -3,10 +3,10 @@ const jobRoutes = require("./routes/jobs");
 require("dotenv").config();
 
 const express = require("express");
-const cors = require("cors"); // Import CORS
+const cors = require("cors");
 const app = express();
 
-// CORS configuration
+
 const corsOptions = {
   origin: "http://localhost:5173", // Allow requests from this origin
   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
@@ -22,10 +22,7 @@ connectDB();
 app.use(express.json());
 
 // Your other routes and logic go here...
-app.use("/api", jobRoutes);
-app.get('/', (req, res) => {
-  res.status(200).json('Welcome, your app is working well');
-});
+app.use("/", jobRoutes);
 
 
 const PORT = process.env.PORT || 5000;
