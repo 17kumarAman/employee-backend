@@ -22,7 +22,7 @@ connectDB();
 app.use(express.json());
 
 // Your other routes and logic go here...
-app.use("/api", jobRoutes);
+// app.use("/api", jobRoutes);
 app.get('/', (req, res) => {
   res.status(200).json('Welcome, your app is working well');
 });
