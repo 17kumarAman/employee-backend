@@ -23,7 +23,9 @@ connectDB();
 app.use(express.json());
 
 // Your other routes and logic go here...
-app.use('/', jobRoutes);
-
+app.use('/api', jobRoutes);
+app.get('/',(req,res)=>{
+  res.send('hi')
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
